@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rohan Kumar Boity — Digital Marketing Portfolio</title>
+  <meta name="description" content="360° Digital Marketer specializing in SEO, Video Content & Analytics. Based in Bhubaneswar, India. Available for jobs & freelance globally.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #080808;
+      --bg2: #111111;
+      --bg3: #181818;
+      --border: #242424;
+      --border2: #383838;
+      --text: #F0EDE6;
+      --text2: #888880;
+      --text3: #484840;
+      --accent: #E8893A;
+      --accent2: #C0702A;
+      --green: #5EC989;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+
+    /* ─── NAV ─── */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 6%;background:rgba(8,8,8,0.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);transition:all .3s}
+    .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--text);text-decoration:none;letter-spacing:-.03em}
+    .nav-logo span{color:var(--accent)}
+    .nav-links{display:flex;align-items:center;gap:0;list-style:none}
+    .nav-links li a{font-size:13px;font-weight:400;color:var(--text2);text-decoration:none;padding:8px 16px;transition:color .2s}
+    .nav-links li a:hover{color:var(--text)}
+    .nav-cta{font-size:13px;font-weight:500;color:var(--bg)!important;background:var(--accent);padding:9px 20px;border-radius:7px;text-decoration:none;transition:background .2s;margin-left:8px}
+    .nav-cta:hover{background:var(--accent2)!important}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+    .hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all .3s}
+    .mobile-menu{display:none;position:fixed;top:61px;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--border);padding:20px 6%;z-index:99;flex-direction:column;gap:0}
+    .mobile-menu a{display:block;padding:14px 0;font-size:15px;color:var(--text2);text-decoration:none;border-bottom:1px solid var(--border);transition:color .2s}
+    .mobile-menu a:hover{color:var(--text)}
+    .mobile-menu a:last-child{border-bottom:none;margin-top:10px;background:var(--accent);color:var(--bg)!important;text-align:center;padding:13px;border-radius:8px}
+
+    /* ─── SCROLL LINE ─── */
+    .scroll-line{position:fixed;top:0;left:0;height:2px;background:var(--accent);z-index:999;width:0;transition:width .1s linear}
+
+    /* ─── HERO ─── */
+    #hero{min-height:100vh;display:flex;align-items:center;padding:120px 6% 80px;position:relative;overflow:hidden}
+    .hero-glow{position:absolute;top:-100px;right:-150px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(232,137,58,.07) 0%,transparent 65%);pointer-events:none}
+    .hero-glow2{position:absolute;bottom:-200px;left:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(232,137,58,.04) 0%,transparent 65%);pointer-events:none}
+    .hero-inner{display:grid;grid-template-columns:1.1fr 1fr;gap:70px;align-items:center;max-width:1200px;margin:0 auto;width:100%}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:11px;color:var(--accent);border:1px solid rgba(232,137,58,.35);padding:5px 14px;border-radius:100px;margin-bottom:22px;background:rgba(232,137,58,.06)}
+    .hero-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 2s ease-in-out infinite;flex-shrink:0}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+    .hero-name{font-family:'Syne',sans-serif;font-size:clamp(46px,6vw,80px);font-weight:800;line-height:1.02;letter-spacing:-.04em;margin-bottom:10px}
+    .hero-name .acc{color:var(--accent)}
+    .hero-role{font-family:'Space Mono',monospace;font-size:clamp(11px,1.2vw,13px);color:var(--text2);letter-spacing:.14em;text-transform:uppercase;margin-bottom:22px}
+    .hero-desc{font-size:16px;color:var(--text2);line-height:1.75;max-width:500px;margin-bottom:36px}
+    .hero-desc strong{color:var(--text);font-weight:500}
+    .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px}
+    .btn-p{display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:#080808;background:var(--accent);padding:13px 26px;border-radius:8px;text-decoration:none;transition:all .2s}
+    .btn-p:hover{background:var(--accent2);transform:translateY(-2px)}
+    .btn-s{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--text);background:transparent;border:1px solid var(--border2);padding:13px 26px;border-radius:8px;text-decoration:none;transition:all .2s}
+    .btn-s:hover{border-color:var(--text2)}
+    .hero-tags{display:flex;flex-wrap:wrap;gap:8px}
+    .hero-tag{font-family:'Space Mono',monospace;font-size:10px;color:var(--text3);border:1px solid var(--border);padding:4px 12px;border-radius:100px}
+    .hero-right{display:flex;flex-direction:column;gap:12px}
+    .h-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:18px 22px;display:flex;align-items:center;gap:16px;transition:border-color .2s}
+    .h-card:hover{border-color:var(--border2)}
+    .h-card-ico{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,rgba(232,137,58,.2),rgba(192,112,42,.1));display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;border:1px solid rgba(232,137,58,.2)}
+    .h-card-lbl{font-size:11px;color:var(--text3);margin-bottom:3px;font-family:'Space Mono',monospace;letter-spacing:.04em}
+    .h-card-val{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--text)}
+    .h-stats{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:18px 22px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .h-stat{text-align:center;padding:8px 4px}
+    .h-stat-n{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;color:var(--accent);line-height:1}
+    .h-stat-l{font-size:10px;color:var(--text3);margin-top:4px;text-transform:uppercase;letter-spacing:.06em;font-family:'Space Mono',monospace}
+
+    /* ─── SHARED ─── */
+    section{padding:90px 6%}
+    .ctr{max-width:1200px;margin:0 auto}
+    .sec-lbl{font-family:'Space Mono',monospace;font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.14em;margin-bottom:12px}
+    .sec-ttl{font-family:'Syne',sans-serif;font-size:clamp(30px,4vw,50px);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:16px}
+    .sec-sub{font-size:15px;color:var(--text2);max-width:560px;line-height:1.75;margin-bottom:52px}
+    hr.div{border:none;border-top:1px solid var(--border)}
+    .fade-up{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+    .fade-up.visible{opacity:1;transform:translateY(0)}
+
+    /* ─── SERVICES ─── */
+    #services{background:var(--bg)}
+    .srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .srv-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:26px;transition:border-color .25s,transform .25s;cursor:default}
+    .srv-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+    .srv-ico{font-size:30px;margin-bottom:16px;display:block}
+    .srv-name{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;margin-bottom:9px;color:var(--text)}
+    .srv-desc{font-size:13px;color:var(--text2);line-height:1.65}
+    .srv-tools{display:flex;flex-wrap:wrap;gap:5px;margin-top:16px}
+    .ttag{font-size:10px;font-family:'Space Mono',monospace;color:var(--text3);border:1px solid var(--border);padding:3px 9px;border-radius:100px}
+
+    /* ─── CASE STUDIES ─── */
+    #work{background:var(--bg)}
+    .tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:40px}
+    .tab-btn{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:var(--text2);background:none;border:none;padding:12px 0;margin-right:32px;cursor:pointer;position:relative;transition:color .2s}
+    .tab-btn::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transition:transform .25s}
+    .tab-btn.active{color:var(--text)}
+    .tab-btn.active::after{transform:scaleX(1)}
+    .tab-panel{display:none}
+    .tab-panel.active{display:block}
+    .cs-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:32px;margin-bottom:18px;transition:border-color .2s}
+    .cs-card:hover{border-color:var(--border2)}
+    .cs-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:24px;flex-wrap:wrap}
+    .cs-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+    .cs-tag-acc{font-family:'Space Mono',monospace;font-size:10px;color:var(--accent);border:1px solid rgba(232,137,58,.4);padding:3px 10px;border-radius:100px;text-transform:uppercase}
+    .cs-tag-grey{font-family:'Space Mono',monospace;font-size:10px;color:var(--text3);border:1px solid var(--border);padding:3px 10px;border-radius:100px}
+    .cs-title{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;letter-spacing:-.02em;margin-bottom:6px}
+    .cs-time{font-size:12px;color:var(--text3);font-family:'Space Mono',monospace}
+    .cs-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--accent);text-decoration:none;border:1px solid rgba(232,137,58,.35);padding:7px 16px;border-radius:7px;white-space:nowrap;flex-shrink:0;transition:background .2s;font-family:'Space Mono',monospace}
+    .cs-link:hover{background:rgba(232,137,58,.1)}
+    .cs-body{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px}
+    .cs-stl{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);margin-bottom:12px;font-family:'Space Mono',monospace}
+    .cs-text{font-size:13px;color:var(--text2);line-height:1.7}
+    .cs-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+    .cs-list li{font-size:13px;color:var(--text2);line-height:1.55;padding-left:16px;position:relative}
+    .cs-list li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;top:1px}
+    .cs-metrics{display:flex;flex-direction:column;gap:8px}
+    .cs-met{background:var(--bg3);border:1px solid var(--border);border-radius:9px;padding:11px 15px}
+    .cs-met-v{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--green);margin-bottom:3px}
+    .cs-met-l{font-size:11px;color:var(--text2)}
+    .cs-tools-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px;padding-top:22px;border-top:1px solid var(--border)}
+
+    /* ─── VIDEO ─── */
+    .vid-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .vid-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:border-color .2s,transform .25s}
+    .vid-card:hover{border-color:var(--border2);transform:translateY(-3px)}
+    .vid-thumb{position:relative;aspect-ratio:16/9;background:var(--bg3);overflow:hidden;display:flex;align-items:center;justify-content:center;text-decoration:none}
+    .vid-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+    .vid-card:hover .vid-thumb img{transform:scale(1.05)}
+    .vid-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.48);transition:background .2s}
+    .vid-card:hover .vid-overlay{background:rgba(0,0,0,.28)}
+    .play-btn{width:56px;height:56px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;transition:transform .2s;box-shadow:0 4px 20px rgba(232,137,58,.4)}
+    .play-btn svg{width:20px;height:20px;fill:#080808;margin-left:3px}
+    .vid-card:hover .play-btn{transform:scale(1.1)}
+    .vid-thumb-placeholder{display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-size:40px;background:linear-gradient(135deg,var(--bg3),var(--bg2))}
+    .vid-info{padding:18px 22px}
+    .vid-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:600;margin-bottom:5px;color:var(--text)}
+    .vid-meta{font-size:12px;color:var(--text3);margin-bottom:10px;font-family:'Space Mono',monospace}
+    .vid-tags{display:flex;gap:6px;flex-wrap:wrap}
+    .vid-tag{font-size:10px;color:var(--text3);border:1px solid var(--border);padding:3px 9px;border-radius:100px;font-family:'Space Mono',monospace}
+
+    /* ─── TOOLS ─── */
+    #tools{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:60px}
+    .tool-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-align:center;transition:border-color .2s,transform .2s}
+    .tool-card:hover{border-color:var(--border2);transform:translateY(-3px)}
+    .t-ico{font-size:26px;margin-bottom:10px;display:block}
+    .t-name{font-size:12px;font-weight:500;color:var(--text)}
+    .t-cat{font-size:10px;color:var(--text3);margin-top:3px;font-family:'Space Mono',monospace}
+    .certs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:60px}
+    .cert-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:20px 22px;display:flex;align-items:center;gap:16px;transition:border-color .2s}
+    .cert-card:hover{border-color:var(--accent)}
+    .cert-ico{width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+    .cert-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700}
+    .cert-sub{font-size:12px;color:var(--text2);margin-top:3px}
+    .inds{display:flex;flex-wrap:wrap;gap:10px}
+    .ind{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--text);background:var(--bg);border:1px solid var(--border);padding:10px 20px;border-radius:100px;transition:border-color .2s}
+    .ind:hover{border-color:var(--accent)}
+
+    /* ─── ABOUT ─── */
+    #about{background:var(--bg)}
+    .about-grid{display:grid;grid-template-columns:1fr 1.7fr;gap:64px;align-items:start}
+    .about-img{aspect-ratio:3/4;background:var(--bg2);border:1px solid var(--border);border-radius:18px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+    .about-img-inner{text-align:center;padding:32px;color:var(--text3)}
+    .about-img-inner div:first-child{font-size:64px;margin-bottom:12px}
+    .about-img-inner p{font-size:12px;line-height:1.6;max-width:200px}
+    .about-img-note{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);font-size:10px;font-family:'Space Mono',monospace;color:var(--text3);background:var(--bg3);border:1px solid var(--border);padding:4px 12px;border-radius:100px;white-space:nowrap}
+    .about-h{font-family:'Syne',sans-serif;font-size:clamp(22px,2.8vw,34px);font-weight:700;letter-spacing:-.02em;margin-bottom:20px;line-height:1.2}
+    .about-p{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:16px}
+    .about-p strong{color:var(--text);font-weight:500}
+    .about-hl{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:28px}
+    .ahl{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:15px 18px}
+    .ahl-lbl{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;font-family:'Space Mono',monospace}
+    .ahl-val{font-size:14px;font-weight:500;color:var(--text)}
+
+    /* ─── CONTACT ─── */
+    #contact{background:var(--bg2);border-top:1px solid var(--border)}
+    .ct-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:start}
+    .ct-links{display:flex;flex-direction:column;gap:12px;margin-top:32px}
+    .ct-link{display:flex;align-items:center;gap:16px;padding:17px 22px;background:var(--bg);border:1px solid var(--border);border-radius:12px;text-decoration:none;transition:border-color .2s,transform .2s}
+    .ct-link:hover{border-color:var(--accent);transform:translateX(6px)}
+    .ct-link-ico{width:40px;height:40px;border-radius:9px;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;border:1px solid var(--border)}
+    .ct-link-lbl{font-size:11px;color:var(--text3);margin-bottom:3px;font-family:'Space Mono',monospace}
+    .ct-link-val{font-size:14px;font-weight:500;color:var(--text)}
+    .ct-box{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:32px}
+    .ct-box h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:24px}
+    .f-row{margin-bottom:16px}
+    label{display:block;font-size:12px;color:var(--text2);margin-bottom:7px;font-weight:500}
+    input,textarea{width:100%;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:12px 15px;outline:none;transition:border-color .2s;resize:none}
+    input::placeholder,textarea::placeholder{color:var(--text3)}
+    input:focus,textarea:focus{border-color:var(--accent)}
+    .f-submit{width:100%;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:var(--bg);background:var(--accent);border:none;border-radius:8px;padding:14px;cursor:pointer;transition:background .2s;margin-top:6px}
+    .f-submit:hover{background:var(--accent2)}
+
+    /* ─── FOOTER ─── */
+    footer{padding:26px 6%;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    .ft-l{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;letter-spacing:-.02em}
+    .ft-l span{color:var(--accent)}
+    .ft-r{font-size:12px;color:var(--text3)}
+    .ft-links{display:flex;gap:20px}
+    .ft-links a{font-size:12px;color:var(--text3);text-decoration:none;transition:color .2s}
+    .ft-links a:hover{color:var(--text)}
+
+    /* ─── RESPONSIVE ─── */
+    @media(max-width:960px){
+      .hero-inner{grid-template-columns:1fr}
+      .hero-right{display:none}
+      .srv-grid{grid-template-columns:1fr 1fr}
+      .cs-body{grid-template-columns:1fr}
+      .tools-grid{grid-template-columns:repeat(3,1fr)}
+      .certs-grid{grid-template-columns:1fr 1fr}
+      .about-grid{grid-template-columns:1fr}
+      .about-img{aspect-ratio:4/3;max-width:380px}
+      .ct-grid{grid-template-columns:1fr}
+      .vid-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:620px){
+      nav{padding:14px 4%}
+      .nav-links{display:none}
+      .hamburger{display:flex}
+      section{padding:60px 4%}
+      .srv-grid{grid-template-columns:1fr}
+      .tools-grid{grid-template-columns:repeat(2,1fr)}
+      .certs-grid{grid-template-columns:1fr}
+      .hero-btns{flex-direction:column;align-items:flex-start}
+      .cs-head{flex-direction:column;align-items:flex-start}
+      .about-hl{grid-template-columns:1fr}
+      .h-stats{grid-template-columns:repeat(2,1fr)}
+      footer{flex-direction:column;align-items:flex-start;gap:16px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- Scroll Progress -->
+<div class="scroll-line" id="scrollLine"></div>
+
+<!-- ═══ NAV ═══ -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">RKB<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#tools">Skills</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me →</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#work" onclick="toggleMenu()">Work</a>
+  <a href="#tools" onclick="toggleMenu()">Skills</a>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#contact" onclick="toggleMenu()">Hire Me →</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge">Available for Hire · India &amp; Worldwide</div>
+      <div class="hero-name">Rohan<br>Kumar <span class="acc">Boity.</span></div>
+      <div class="hero-role">360° Digital Marketer &nbsp;·&nbsp; MBA Candidate &nbsp;·&nbsp; Bhubaneswar, India</div>
+      <p class="hero-desc">
+        I help <strong>local businesses &amp; growing brands</strong> get found online, go viral on social, and convert attention into revenue — through <strong>data-backed SEO</strong>, <strong>cinematic video content</strong>, and <strong>full-funnel strategy</strong>.
+      </p>
+      <div class="hero-btns">
+        <a href="#work" class="btn-p">View My Work ↓</a>
+        <a href="mailto:rohanboity2@gmail.com" class="btn-s">Get In Touch</a>
+      </div>
+      <div class="hero-tags">
+        <span class="hero-tag">Local SEO</span>
+        <span class="hero-tag">Technical SEO</span>
+        <span class="hero-tag">GA4 Analytics</span>
+        <span class="hero-tag">Reels Editing</span>
+        <span class="hero-tag">GMB Optimization</span>
+        <span class="hero-tag">Content Strategy</span>
+        <span class="hero-tag">Social Media</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="h-card">
+        <div class="h-card-ico">📍</div>
+        <div>
+          <div class="h-card-lbl">Based In</div>
+          <div class="h-card-val">Bhubaneswar, Odisha · India</div>
+        </div>
+      </div>
+      <div class="h-card">
+        <div class="h-card-ico">🌐</div>
+        <div>
+          <div class="h-card-lbl">Clients Served In</div>
+          <div class="h-card-val">India &amp; United States</div>
+        </div>
+      </div>
+      <div class="h-card">
+        <div class="h-card-ico">🎓</div>
+        <div>
+          <div class="h-card-lbl">Certifications</div>
+          <div class="h-card-val">Google · Meta Blueprint · HubSpot</div>
+        </div>
+      </div>
+      <div class="h-card">
+        <div class="h-card-ico">🎬</div>
+        <div>
+          <div class="h-card-lbl">Video Tools</div>
+          <div class="h-card-val">Premiere Pro · Canva Pro · CapCut</div>
+        </div>
+      </div>
+      <div class="h-stats">
+        <div class="h-stat"><div class="h-stat-n">4+</div><div class="h-stat-l">Brands</div></div>
+        <div class="h-stat"><div class="h-stat-n">2</div><div class="h-stat-l">Countries</div></div>
+        <div class="h-stat"><div class="h-stat-n">8+</div><div class="h-stat-l">Projects</div></div>
+        <div class="h-stat"><div class="h-stat-n">360°</div><div class="h-stat-l">Coverage</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ═══ SERVICES ═══ -->
+<section id="services">
+  <div class="ctr">
+    <div class="sec-lbl">What I Do</div>
+    <div class="sec-ttl">Services that move<br>the needle.</div>
+    <div class="sec-sub">From technical SEO audits to cinematic video content — I cover the full digital spectrum so your brand doesn't need five different specialists.</div>
+    <div class="srv-grid">
+      <div class="srv-card fade-up">
+        <span class="srv-ico">🔍</span>
+        <div class="srv-name">Local SEO &amp; GMB Optimization</div>
+        <div class="srv-desc">Full-spectrum local search strategy — GMB setup &amp; optimization, citation building, local keyword targeting, and map pack ranking to get your business found first.</div>
+        <div class="srv-tools"><span class="ttag">Semrush</span><span class="ttag">GMB</span><span class="ttag">GSC</span><span class="ttag">Ubersuggest</span></div>
+      </div>
+      <div class="srv-card fade-up">
+        <span class="srv-ico">🛠</span>
+        <div class="srv-name">Technical SEO Audit</div>
+        <div class="srv-desc">Deep-dive crawl analysis, broken links, meta tag fixes, Core Web Vitals, indexing health — delivered as a clean, developer-ready action plan with priority fixes.</div>
+        <div class="srv-tools"><span class="ttag">Screaming Frog</span><span class="ttag">GA4</span><span class="ttag">GSC</span><span class="ttag">Semrush</span></div>
+      </div>
+      <div class="srv-card fade-up">
+        <span class="srv-ico">🎬</span>
+        <div class="srv-name">Video &amp; Reels Editing</div>
+        <div class="srv-desc">Scroll-stopping short-form content for Instagram, YouTube Shorts, and LinkedIn — cinematic cuts, speed ramps, AI voiceover, branding, and captions that convert.</div>
+        <div class="srv-tools"><span class="ttag">Premiere Pro</span><span class="ttag">Canva Pro</span><span class="ttag">CapCut</span><span class="ttag">ElevenLabs</span></div>
+      </div>
+      <div class="srv-card fade-up">
+        <span class="srv-ico">✍️</span>
+        <div class="srv-name">Content &amp; Blog Strategy</div>
+        <div class="srv-desc">SEO-optimized blog writing with keyword research, intent mapping, and content calendars — driving organic traffic and building long-term topical authority.</div>
+        <div class="srv-tools"><span class="ttag">Semrush</span><span class="ttag">Ubersuggest</span><span class="ttag">GSC</span></div>
+      </div>
+      <div class="srv-card fade-up">
+        <span class="srv-ico">📊</span>
+        <div class="srv-name">GA4 Analytics &amp; Reporting</div>
+        <div class="srv-desc">Setup, event tracking, conversion configuration, and custom Looker Studio dashboards. Know exactly what's working — with data you can actually act on.</div>
+        <div class="srv-tools"><span class="ttag">GA4</span><span class="ttag">Looker Studio</span><span class="ttag">GSC</span><span class="ttag">GMB</span></div>
+      </div>
+      <div class="srv-card fade-up">
+        <span class="srv-ico">📱</span>
+        <div class="srv-name">Social Media Management</div>
+        <div class="srv-desc">End-to-end content planning, visual creation, scheduling, and performance tracking across Instagram, LinkedIn, and Facebook — consistent growth, zero chaos.</div>
+        <div class="srv-tools"><span class="ttag">Canva Pro</span><span class="ttag">Meta Suite</span><span class="ttag">AI Tools</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ═══ CASE STUDIES ═══ -->
+<section id="work">
+  <div class="ctr">
+    <div class="sec-lbl">Portfolio</div>
+    <div class="sec-ttl">Real work.<br>Real clients. Real results.</div>
+    <div class="sec-sub">Every project below is documented real client work — with full process, strategy, and outcomes. No mock projects. No fluff.</div>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('seo',this)">SEO Projects (4)</button>
+      <button class="tab-btn" onclick="switchTab('video',this)">Video Work (4)</button>
+    </div>
+
+    <!-- SEO TAB -->
+    <div class="tab-panel active" id="tab-seo">
+
+      <!-- Evvara Café -->
+      <div class="cs-card fade-up">
+        <div class="cs-head">
+          <div>
+            <div class="cs-tags">
+              <span class="cs-tag-acc">Local SEO</span>
+              <span class="cs-tag-acc">GMB</span>
+              <span class="cs-tag-grey">F&amp;B · Café</span>
+              <span class="cs-tag-grey">India</span>
+            </div>
+            <div class="cs-title">Evvara Café — Local SEO &amp; GMB Optimization</div>
+            <div class="cs-time">June 2025 – July 2025 &nbsp;·&nbsp; Bhubaneswar, Odisha, India</div>
+          </div>
+          <a href="https://docs.google.com/spreadsheets/d/1KDU0mzOZQvH6sRjvdX6Flp1o26AX8qhg/edit" target="_blank" class="cs-link">View SEO Audit ↗</a>
+        </div>
+        <div class="cs-body">
+          <div>
+            <div class="cs-stl">The Problem</div>
+            <div class="cs-text">The café had no structured local SEO presence — a weak GMB listing, zero backlinks, crawlability issues on the site, and poor visibility for local food searches in Bhubaneswar. They were invisible online despite having a great product.</div>
+          </div>
+          <div>
+            <div class="cs-stl">My Strategy &amp; Execution</div>
+            <ul class="cs-list">
+              <li>Full SEO audit: meta tags, broken links, image optimization, heading structure &amp; crawlability</li>
+              <li>Audited GSC data: CTR, impressions &amp; page performance by keyword</li>
+              <li>GMB listing rebuilt with targeted categories, keywords &amp; updated images</li>
+              <li>Built local &amp; niche backlinks from food, event &amp; city directories</li>
+              <li>Delivered page-by-page fix recommendations to the dev team</li>
+            </ul>
+          </div>
+          <div>
+            <div class="cs-stl">Outcomes</div>
+            <div class="cs-metrics">
+              <div class="cs-met"><div class="cs-met-v">↑ Improved</div><div class="cs-met-l">Page speed &amp; crawlability scores</div></div>
+              <div class="cs-met"><div class="cs-met-v">↑ Increased</div><div class="cs-met-l">GMB branded discovery &amp; local impressions</div></div>
+              <div class="cs-met"><div class="cs-met-v">↑ Higher CTR</div><div class="cs-met-l">On service-based local keywords via GSC</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-tools-row">
+          <span class="ttag">Google Search Console</span><span class="ttag">GMB</span><span class="ttag">Semrush</span><span class="ttag">Screaming Frog</span><span class="ttag">Google Sheets</span>
+        </div>
+      </div>
+
+      <!-- DFW Limo -->
+      <div class="cs-card fade-up">
+        <div class="cs-head">
+          <div>
+            <div class="cs-tags">
+              <span class="cs-tag-acc">Local SEO</span>
+              <span class="cs-tag-acc">GA4 Analytics</span>
+              <span class="cs-tag-grey">Transport · Luxury</span>
+              <span class="cs-tag-grey">USA</span>
+            </div>
+            <div class="cs-title">DFW Limo Services — Local SEO &amp; Analytics</div>
+            <div class="cs-time">June 2025 – July 2025 &nbsp;·&nbsp; Dallas, Texas, USA</div>
+          </div>
+          <a href="#contact" class="cs-link">Request Full Report ↗</a>
+        </div>
+        <div class="cs-body">
+          <div>
+            <div class="cs-stl">The Problem</div>
+            <div class="cs-text">A premium US limousine company needed better local search visibility and lead generation. Low GMB engagement, thin backlink profile, untracked GA4 traffic, and landing pages with no on-page SEO were limiting their online performance.</div>
+          </div>
+          <div>
+            <div class="cs-stl">My Strategy &amp; Execution</div>
+            <ul class="cs-list">
+              <li>Complete Local SEO audit + GMB enhancement with proper categories &amp; media</li>
+              <li>On-page SEO fixes for key service &amp; location landing pages</li>
+              <li>GA4 deep dive: engagement, events, traffic sources &amp; top pages</li>
+              <li>High-quality backlinks from local directories, business listings &amp; niche forums</li>
+              <li>Blog content written &amp; optimized for location-based keywords (city + service)</li>
+            </ul>
+          </div>
+          <div>
+            <div class="cs-stl">Outcomes</div>
+            <div class="cs-metrics">
+              <div class="cs-met"><div class="cs-met-v">↑ Higher</div><div class="cs-met-l">Engagement rate &amp; avg. session time (GA4)</div></div>
+              <div class="cs-met"><div class="cs-met-v">↑ More</div><div class="cs-met-l">GMB direction requests, calls &amp; website clicks</div></div>
+              <div class="cs-met"><div class="cs-met-v">↑ Increased</div><div class="cs-met-l">Impressions &amp; CTR on local keywords (GSC)</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-tools-row">
+          <span class="ttag">GA4</span><span class="ttag">GSC</span><span class="ttag">GMB</span><span class="ttag">Semrush</span><span class="ttag">Ubersuggest</span><span class="ttag">Canva</span>
+        </div>
+      </div>
+
+      <!-- Obsession Jewellery -->
+      <div class="cs-card fade-up">
+        <div class="cs-head">
+          <div>
+            <div class="cs-tags">
+              <span class="cs-tag-acc">SEO Strategy</span>
+              <span class="cs-tag-acc">Content</span>
+              <span class="cs-tag-acc">Backlinks</span>
+              <span class="cs-tag-grey">Jewellery · Luxury</span>
+            </div>
+            <div class="cs-title">Obsession Jewellery — SEO Strategy &amp; Content</div>
+            <div class="cs-time">June 2025 – July 2025</div>
+          </div>
+          <a href="#contact" class="cs-link">Request Full Report ↗</a>
+        </div>
+        <div class="cs-body">
+          <div>
+            <div class="cs-stl">The Problem</div>
+            <div class="cs-text">A luxury jewellery brand was struggling with high bounce rates, poor GSC performance, thin content, and weak backlink authority — limiting organic discoverability for both local and category-based searches.</div>
+          </div>
+          <div>
+            <div class="cs-stl">My Strategy &amp; Execution</div>
+            <ul class="cs-list">
+              <li>Comprehensive technical SEO audit with prioritized fix list</li>
+              <li>SEO-driven content strategy + blog structure for topical authority</li>
+              <li>High-authority backlinks from jewellery niche directories</li>
+              <li>GA4 analysis to identify conversion drop-offs and engagement gaps</li>
+              <li>GMB monitoring for local discovery, direction requests &amp; call tracking</li>
+            </ul>
+          </div>
+          <div>
+            <div class="cs-stl">Outcomes</div>
+            <div class="cs-metrics">
+              <div class="cs-met"><div class="cs-met-v">↑ Improved</div><div class="cs-met-l">CTR &amp; search impressions via GSC</div></div>
+              <div class="cs-met"><div class="cs-met-v">↓ Reduced</div><div class="cs-met-l">Bounce rate &amp; increased engagement time</div></div>
+              <div class="cs-met"><div class="cs-met-v">↑ Boosted</div><div class="cs-met-l">Local GMB discovery &amp; call inquiries</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-tools-row">
+          <span class="ttag">GA4</span><span class="ttag">GSC</span><span class="ttag">GMB</span><span class="ttag">Semrush</span>
+        </div>
+      </div>
+
+      <!-- AA Price -->
+      <div class="cs-card fade-up">
+        <div class="cs-head">
+          <div>
+            <div class="cs-tags">
+              <span class="cs-tag-acc">Website Audit</span>
+              <span class="cs-tag-acc">Technical SEO</span>
+              <span class="cs-tag-grey">Service Business</span>
+            </div>
+            <div class="cs-title">AA Price — Full Website SEO Audit</div>
+            <div class="cs-time">June 2025 – July 2025</div>
+          </div>
+          <a href="https://docs.google.com/spreadsheets/d/1KVPtS_zZBCIeGbRt07B09Jol8GftHqTj/edit" target="_blank" class="cs-link">View Audit Report ↗</a>
+        </div>
+        <div class="cs-body">
+          <div>
+            <div class="cs-stl">The Problem</div>
+            <div class="cs-text">A service-oriented business website had crawl errors, missing tags, and poor organic visibility. GA4 showed high-impression pages sitting at near-zero CTR — a clear on-page and meta optimization gap leaving traffic on the table.</div>
+          </div>
+          <div>
+            <div class="cs-stl">My Strategy &amp; Execution</div>
+            <ul class="cs-list">
+              <li>Detailed technical SEO audit documenting crawl errors, broken links &amp; missing tags</li>
+              <li>GA4 analysis to separate high-performing vs low-engagement pages</li>
+              <li>GSC performance review: keyword CTR, impressions &amp; indexing issues</li>
+              <li>On-page recommendations: meta tags, header hierarchy, page speed &amp; mobile</li>
+              <li>Developer-ready action plan with fixes ranked by priority &amp; impact</li>
+            </ul>
+          </div>
+          <div>
+            <div class="cs-stl">Outcomes</div>
+            <div class="cs-metrics">
+              <div class="cs-met"><div class="cs-met-v">✓ Resolved</div><div class="cs-met-l">Critical crawl errors &amp; indexing issues</div></div>
+              <div class="cs-met"><div class="cs-met-v">↑ Optimized</div><div class="cs-met-l">High-impression, low-CTR pages for clicks</div></div>
+              <div class="cs-met"><div class="cs-met-v">↑ Better</div><div class="cs-met-l">Page experience scores &amp; crawlability health</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-tools-row">
+          <span class="ttag">GA4</span><span class="ttag">GSC</span><span class="ttag">Screaming Frog</span><span class="ttag">Semrush</span><span class="ttag">Google Sheets</span>
+        </div>
+      </div>
+
+    </div><!-- /tab-seo -->
+
+    <!-- VIDEO TAB -->
+    <div class="tab-panel" id="tab-video">
+      <div class="vid-grid">
+        <div class="vid-card">
+          <a href="https://drive.google.com/file/d/1cgaJ34Qa8fcbCUfkZnB7yPXmqCOxcOQN/view" target="_blank" class="vid-thumb">
+            <img src="https://drive.google.com/thumbnail?id=1cgaJ34Qa8fcbCUfkZnB7yPXmqCOxcOQN&sz=w800" alt="Branded Promo Reel thumbnail" onerror="this.parentNode.innerHTML='<div class=\'vid-thumb-placeholder\'>🎬</div><div class=\'vid-overlay\'><div class=\'play-btn\'><svg viewBox=\'0 0 24 24\'><polygon points=\'5,3 19,12 5,21\'/></svg></div></div>'">
+            <div class="vid-overlay"><div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+          </a>
+          <div class="vid-info">
+            <div class="vid-name">Branded Promo Reel — Fast-Paced Awareness Edit</div>
+            <div class="vid-meta">Instagram · YouTube Shorts · LinkedIn</div>
+            <div class="vid-tags"><span class="vid-tag">Premiere Pro</span><span class="vid-tag">Canva Pro</span><span class="vid-tag">ElevenLabs AI</span><span class="vid-tag">Hook-Driven</span></div>
+          </div>
+        </div>
+        <div class="vid-card">
+          <a href="https://drive.google.com/file/d/1e7w5-eZriUsRRfkWmP8vXdkTMQ2aoSxW/view" target="_blank" class="vid-thumb">
+            <img src="https://drive.google.com/thumbnail?id=1e7w5-eZriUsRRfkWmP8vXdkTMQ2aoSxW&sz=w800" alt="Cinematic Reel thumbnail" onerror="this.parentNode.innerHTML='<div class=\'vid-thumb-placeholder\'>🎞️</div><div class=\'vid-overlay\'><div class=\'play-btn\'><svg viewBox=\'0 0 24 24\'><polygon points=\'5,3 19,12 5,21\'/></svg></div></div>'">
+            <div class="vid-overlay"><div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+          </a>
+          <div class="vid-info">
+            <div class="vid-name">Cinematic Instagram Reel — Color Graded &amp; Smooth Visuals</div>
+            <div class="vid-meta">Instagram Reels</div>
+            <div class="vid-tags"><span class="vid-tag">Premiere Pro</span><span class="vid-tag">Cinematic LUTs</span><span class="vid-tag">Color Grading</span><span class="vid-tag">Slow Motion</span></div>
+          </div>
+        </div>
+        <div class="vid-card">
+          <a href="https://drive.google.com/file/d/1j6dIPPU3sEmYK_t4rpKoAh1wktUFFbSp/view" target="_blank" class="vid-thumb">
+            <img src="https://drive.google.com/thumbnail?id=1j6dIPPU3sEmYK_t4rpKoAh1wktUFFbSp&sz=w800" alt="Brand Services Promo thumbnail" onerror="this.parentNode.innerHTML='<div class=\'vid-thumb-placeholder\'>📢</div><div class=\'vid-overlay\'><div class=\'play-btn\'><svg viewBox=\'0 0 24 24\'><polygon points=\'5,3 19,12 5,21\'/></svg></div></div>'">
+            <div class="vid-overlay"><div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+          </a>
+          <div class="vid-info">
+            <div class="vid-name">Brand Services Promo — High-Energy Clip Edit</div>
+            <div class="vid-meta">Instagram · Facebook</div>
+            <div class="vid-tags"><span class="vid-tag">Canva Pro</span><span class="vid-tag">ElevenLabs AI</span><span class="vid-tag">Scroll-Stopping</span><span class="vid-tag">Hook → CTA</span></div>
+          </div>
+        </div>
+        <div class="vid-card">
+          <a href="https://drive.google.com/file/d/1dcf3Yx49QwR-FkaXgwz6Oqb4yofe3KrZ/view" target="_blank" class="vid-thumb">
+            <img src="https://drive.google.com/thumbnail?id=1dcf3Yx49QwR-FkaXgwz6Oqb4yofe3KrZ&sz=w800" alt="Team Moments Reel thumbnail" onerror="this.parentNode.innerHTML='<div class=\'vid-thumb-placeholder\'>🎉</div><div class=\'vid-overlay\'><div class=\'play-btn\'><svg viewBox=\'0 0 24 24\'><polygon points=\'5,3 19,12 5,21\'/></svg></div></div>'">
+            <div class="vid-overlay"><div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+          </a>
+          <div class="vid-info">
+            <div class="vid-name">Team Moments — Office Culture &amp; Employer Brand Reel</div>
+            <div class="vid-meta">Instagram · LinkedIn · Facebook</div>
+            <div class="vid-tags"><span class="vid-tag">Canva Pro</span><span class="vid-tag">Culture Reel</span><span class="vid-tag">Behind-the-Scenes</span><span class="vid-tag">Employer Brand</span></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /tab-video -->
+
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ═══ TOOLS + CERTS + INDUSTRIES ═══ -->
+<section id="tools">
+  <div class="ctr">
+    <div class="sec-lbl">Tech Stack</div>
+    <div class="sec-ttl">Tools I use daily.</div>
+    <div class="sec-sub" style="margin-bottom:40px">A hands-on marketer who actually uses the tools — not just names them on a CV.</div>
+    <div class="tools-grid">
+      <div class="tool-card fade-up"><span class="t-ico">📊</span><div class="t-name">Google Analytics 4</div><div class="t-cat">Analytics</div></div>
+      <div class="tool-card fade-up"><span class="t-ico">🔍</span><div class="t-name">Search Console</div><div class="t-cat">SEO</div></div>
+      <div class="tool-card fade-up"><span class="t-ico">📍</span><div class="t-name">Google Business Profile</div><div class="t-cat">Local SEO</div></div>
+      <div class="tool-card fade-up"><span class="t-ico">📈</span><div class="t-name">Semrush</div><div class="t-cat">SEO / Keyword</div></div>
+      <div class="tool-card fade-up"><span class="t-ico">🕷️</span><div class="t-name">Screaming Frog</div><div class="t-cat">Technical SEO</div></div>
+      <div class="tool-card fade-up"><span class="t-ico">📉</span><div class="t-name">Ubersuggest</div><div class="t-cat">SEO / Keyword</div></div>
+      <div class="tool-card fade-up"><span class="t-ico">🎨</span><div class="t-name">Canva Pro</div><div class="t-cat">Design</div></div>
+      <div class="tool-card fade-up"><span class="t-ico">🎬</span><div class="t-name">Adobe Premiere Pro</div><div class="t-cat">Video Editing</div></div>
+      <div class="tool-card fade-up"><span class="t-ico">✂️</span><div class="t-name">CapCut</div><div class="t-cat">Short-Form Video</div></div>
+      <div class="tool-card fade-up"><span class="t-ico">🎙️</span><div class="t-name">ElevenLabs AI</div><div class="t-cat">AI Voiceover</div></div>
+      <div class="tool-card fade-up"><span class="t-ico">📋</span><div class="t-name">Looker Studio</div><div class="t-cat">Dashboards</div></div>
+      <div class="tool-card fade-up"><span class="t-ico">🤖</span><div class="t-name">Advanced AI Tools</div><div class="t-cat">AI-Assisted</div></div>
+    </div>
+
+    <div style="margin-top:64px">
+      <div class="sec-lbl">Certifications</div>
+      <div class="sec-ttl" style="font-size:clamp(24px,3vw,36px);margin-bottom:28px">Certified. Not just claimed.</div>
+      <div class="certs-grid">
+        <div class="cert-card fade-up">
+          <div class="cert-ico" style="background:#E8F0FE">🔵</div>
+          <div><div class="cert-name">Google Certified</div><div class="cert-sub">Google Marketing Platform</div></div>
+        </div>
+        <div class="cert-card fade-up">
+          <div class="cert-ico" style="background:#E3F2FD">🔷</div>
+          <div><div class="cert-name">Meta Blueprint</div><div class="cert-sub">Meta Platforms Inc.</div></div>
+        </div>
+        <div class="cert-card fade-up">
+          <div class="cert-ico" style="background:#FFF3E0">🟠</div>
+          <div><div class="cert-name">HubSpot Certified</div><div class="cert-sub">HubSpot Academy</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:64px">
+      <div class="sec-lbl">Industries</div>
+      <div class="sec-ttl" style="font-size:clamp(24px,3vw,36px);margin-bottom:28px">Brands I've worked with.</div>
+      <div class="inds">
+        <div class="ind">☕ Cafés &amp; Restaurants</div>
+        <div class="ind">💎 Jewellery &amp; Luxury Retail</div>
+        <div class="ind">🚗 Limo &amp; Transport Services</div>
+        <div class="ind">🛡️ Insurance Services</div>
+        <div class="ind">🛍️ Local &amp; DTC Brands</div>
+        <div class="ind">🌐 Service Businesses</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about">
+  <div class="ctr">
+    <div class="about-grid">
+      <div>
+        <div class="about-img">
+          <div class="about-img-inner">
+            <div>🧑‍💻</div>
+            <p>Replace this with your professional headshot — plain background, good natural light.</p>
+          </div>
+          <div class="about-img-note">📸 Add your photo here</div>
+        </div>
+      </div>
+      <div>
+        <div class="sec-lbl">About Me</div>
+        <div class="about-h">The marketer who thinks in data<br>and speaks in stories.</div>
+        <p class="about-p">I'm <strong>Rohan Kumar Boity</strong>, an MBA student and 360° Digital Marketer from <strong>Bhubaneswar, Odisha</strong>. I've worked with real clients across India and the USA — from cozy local cafés to premium limousine companies — helping them get found, get seen, and grow.</p>
+        <p class="about-p">What makes me different is the combination of <strong>analytical rigor and creative execution</strong>. I don't just audit and report — I also build the video content, write the blogs, and design the visuals that make strategy actually work in the real world.</p>
+        <p class="about-p">I believe in learning by doing. Every project in this portfolio is real client work, documented with full transparency. No fluff, no invented numbers — just genuine effort and measurable results.</p>
+        <div class="about-hl">
+          <div class="ahl"><div class="ahl-lbl">Currently</div><div class="ahl-val">MBA Student</div></div>
+          <div class="ahl"><div class="ahl-lbl">Based In</div><div class="ahl-val">Bhubaneswar, India</div></div>
+          <div class="ahl"><div class="ahl-lbl">Open To</div><div class="ahl-val">Jobs · Freelance · Collabs</div></div>
+          <div class="ahl"><div class="ahl-lbl">Availability</div><div class="ahl-val">India &amp; Worldwide</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <div class="ctr">
+    <div class="sec-lbl">Let's Work Together</div>
+    <div class="sec-ttl">Got a project in mind?<br>Let's make it happen.</div>
+    <div class="sec-sub">Whether it's SEO, video content, social strategy, or a full-stack digital project — reach out and let's talk about your goals.</div>
+    <div class="ct-grid">
+      <div>
+        <div class="ct-links">
+          <a href="mailto:rohanboity2@gmail.com" class="ct-link">
+            <div class="ct-link-ico">📧</div>
+            <div><div class="ct-link-lbl">Email</div><div class="ct-link-val">rohanboity2@gmail.com</div></div>
+          </a>
+          <a href="https://wa.me/918114624846" target="_blank" class="ct-link">
+            <div class="ct-link-ico">💬</div>
+            <div><div class="ct-link-lbl">WhatsApp</div><div class="ct-link-val">+91 81146 24846</div></div>
+          </a>
+          <a href="https://www.linkedin.com/in/rohan-kumar-boity-4480b2265" target="_blank" class="ct-link">
+            <div class="ct-link-ico">💼</div>
+            <div><div class="ct-link-lbl">LinkedIn</div><div class="ct-link-val">Rohan Kumar Boity</div></div>
+          </a>
+        </div>
+      </div>
+      <div class="ct-box">
+        <h3>Send a quick message</h3>
+        <div class="f-row"><label>Your Name</label><input type="text" placeholder="e.g. Priya Sharma"></div>
+        <div class="f-row"><label>Email Address</label><input type="email" placeholder="your@email.com"></div>
+        <div class="f-row"><label>What do you need?</label><textarea rows="4" placeholder="Tell me about your project or what you're looking for..."></textarea></div>
+        <button class="f-submit" onclick="handleSubmit(this)">Send Message →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="ft-l">RKB<span>.</span></div>
+  <div class="ft-links">
+    <a href="mailto:rohanboity2@gmail.com">Email</a>
+    <a href="https://wa.me/918114624846" target="_blank">WhatsApp</a>
+    <a href="https://www.linkedin.com/in/rohan-kumar-boity-4480b2265" target="_blank">LinkedIn</a>
+  </div>
+  <div class="ft-r">© 2025 Rohan Kumar Boity · Bhubaneswar, India</div>
+</footer>
+
+<script>
+  // Scroll progress
+  window.addEventListener('scroll',()=>{
+    const p=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*100;
+    document.getElementById('scrollLine').style.width=p+'%';
+  });
+
+  // Fade-in on scroll
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach((e,i)=>{
+      if(e.isIntersecting){
+        setTimeout(()=>e.target.classList.add('visible'),i*70);
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.1});
+  document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+  // Tab switcher
+  function switchTab(id,btn){
+    document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    document.getElementById('tab-'+id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  // Mobile menu
+  function toggleMenu(){
+    const m=document.getElementById('mobileMenu');
+    m.style.display=m.style.display==='flex'?'none':'flex';
+  }
+
+  // Contact form
+  function handleSubmit(btn){
+    const orig=btn.textContent;
+    btn.textContent='Message Sent! ✓';
+    btn.style.background='#5EC989';
+    btn.disabled=true;
+    setTimeout(()=>{btn.textContent=orig;btn.style.background='';btn.disabled=false;},3500);
+  }
+
+  // Close mobile menu on outside click
+  document.addEventListener('click',e=>{
+    if(!e.target.closest('nav')&&!e.target.closest('#mobileMenu')){
+      document.getElementById('mobileMenu').style.display='none';
+    }
+  });
+</script>
+</body>
+</html>
